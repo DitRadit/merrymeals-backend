@@ -1,0 +1,21 @@
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            clientId: 971335679542-5ai50434ohpm5qp2a8tqh9lfkf54dm9k.apps.googleusercontent.com
+            clientSecret: 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
+            redirectUri: http://localhost:8080/login/oauth2/code/google
+            scope:
+              - email
+              - profile
+        loginPage: /login
+
+
+  oauth2:
+    # After successfully authenticating with the OAuth2 Provider,
+    # we'll be generating an auth token for the user and sending the token to the
+    # redirectUri mentioned by the client in the /oauth2/authorize request.
+    authorizedRedirectUris:
+      - http://localhost:3000/oauth2/redirect
